@@ -38,8 +38,7 @@ mixin _$Package {
 
 /// @nodoc
 abstract class $PackageCopyWith<$Res> {
-  factory $PackageCopyWith(Package value, $Res Function(Package) then) =
-      _$PackageCopyWithImpl<$Res, Package>;
+  factory $PackageCopyWith(Package value, $Res Function(Package) then) = _$PackageCopyWithImpl<$Res, Package>;
   @useResult
   $Res call(
       {String name,
@@ -55,8 +54,7 @@ abstract class $PackageCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PackageCopyWithImpl<$Res, $Val extends Package>
-    implements $PackageCopyWith<$Res> {
+class _$PackageCopyWithImpl<$Res, $Val extends Package> implements $PackageCopyWith<$Res> {
   _$PackageCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -125,9 +123,7 @@ class _$PackageCopyWithImpl<$Res, $Val extends Package>
 
 /// @nodoc
 abstract class _$$_PackageCopyWith<$Res> implements $PackageCopyWith<$Res> {
-  factory _$$_PackageCopyWith(
-          _$_Package value, $Res Function(_$_Package) then) =
-      __$$_PackageCopyWithImpl<$Res>;
+  factory _$$_PackageCopyWith(_$_Package value, $Res Function(_$_Package) then) = __$$_PackageCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -144,11 +140,8 @@ abstract class _$$_PackageCopyWith<$Res> implements $PackageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PackageCopyWithImpl<$Res>
-    extends _$PackageCopyWithImpl<$Res, _$_Package>
-    implements _$$_PackageCopyWith<$Res> {
-  __$$_PackageCopyWithImpl(_$_Package _value, $Res Function(_$_Package) _then)
-      : super(_value, _then);
+class __$$_PackageCopyWithImpl<$Res> extends _$PackageCopyWithImpl<$Res, _$_Package> implements _$$_PackageCopyWith<$Res> {
+  __$$_PackageCopyWithImpl(_$_Package _value, $Res Function(_$_Package) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -225,8 +218,7 @@ class _$_Package implements _Package {
       required this.isDirectDependency})
       : _authors = authors;
 
-  factory _$_Package.fromJson(Map<String, dynamic> json) =>
-      _$$_PackageFromJson(json);
+  factory _$_Package.fromJson(Map<String, dynamic> json) => _$$_PackageFromJson(json);
 
   @override
   final String name;
@@ -261,47 +253,31 @@ class _$_Package implements _Package {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Package &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.homepage, homepage) ||
-                other.homepage == homepage) &&
-            (identical(other.repository, repository) ||
-                other.repository == repository) &&
+            (identical(other.description, description) || other.description == description) &&
+            (identical(other.homepage, homepage) || other.homepage == homepage) &&
+            (identical(other.repository, repository) || other.repository == repository) &&
             const DeepCollectionEquality().equals(other._authors, _authors) &&
             (identical(other.version, version) || other.version == version) &&
             (identical(other.license, license) || other.license == license) &&
-            (identical(other.isMarkdown, isMarkdown) ||
-                other.isMarkdown == isMarkdown) &&
+            (identical(other.isMarkdown, isMarkdown) || other.isMarkdown == isMarkdown) &&
             (identical(other.isSdk, isSdk) || other.isSdk == isSdk) &&
-            (identical(other.isDirectDependency, isDirectDependency) ||
-                other.isDirectDependency == isDirectDependency));
+            (identical(other.isDirectDependency, isDirectDependency) || other.isDirectDependency == isDirectDependency));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      name,
-      description,
-      homepage,
-      repository,
-      const DeepCollectionEquality().hash(_authors),
-      version,
-      license,
-      isMarkdown,
-      isSdk,
-      isDirectDependency);
+  int get hashCode => Object.hash(runtimeType, name, description, homepage, repository, const DeepCollectionEquality().hash(_authors), version,
+      license, isMarkdown, isSdk, isDirectDependency);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PackageCopyWith<_$_Package> get copyWith =>
-      __$$_PackageCopyWithImpl<_$_Package>(this, _$identity);
+  _$$_PackageCopyWith<_$_Package> get copyWith => __$$_PackageCopyWithImpl<_$_Package>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -348,6 +324,5 @@ abstract class _Package implements Package {
   bool get isDirectDependency;
   @override
   @JsonKey(ignore: true)
-  _$$_PackageCopyWith<_$_Package> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_PackageCopyWith<_$_Package> get copyWith => throw _privateConstructorUsedError;
 }
