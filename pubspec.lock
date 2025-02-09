@@ -569,10 +569,10 @@ packages:
     dependency: "direct main"
     description:
       name: keyboard_utils_fork
-      sha256: "8cd85549a8dd5dcf4aed09057430fbbea875c8cc0b9c0ddc8f85964da49fd7da"
+      sha256: ed75805d7d851ea09367166020e3a2b4132e559421321be0aeedf64fbb483968
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.4"
+    version: "1.0.1"
   leak_tracker:
     dependency: transitive
     description:
