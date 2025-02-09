@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import '../../../dialog/d_color_bottom.dart';
 import '../../../dialog/d_confirm.dart';
 
-class HomeFragment extends StatelessWidget {
-  const HomeFragment({
+class FHome extends StatelessWidget {
+  const FHome({
     Key? key,
   }) : super(key: key);
 

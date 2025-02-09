@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import '../../../../common/widget/round_button_theme.dart';
 import '../../../../common/widget/w_round_button.dart';
 
-class FavoriteFragment extends StatelessWidget {
+class FFavorite extends StatelessWidget {
   final bool isShowBackButton;
 
-  const FavoriteFragment({
+  const FFavorite({
     Key? key,
     this.isShowBackButton = true,
   }) : super(key: key);
@@ -24,18 +24,14 @@ class FavoriteFragment extends StatelessWidget {
             Expanded(
               child: Container(
                 color: Colors.green.withOpacity(0.2),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Row(),
-                      RoundButton(
-                        text: '즐겨찾기 화면 띄우기',
-                        onTap: () => Nav.push(const FavoriteFragment(isShowBackButton: true),
-                            context: context),
-                        theme: RoundButtonTheme.blue,
-                      ),
-                    ]),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
+                  const Row(),
+                  RoundButton(
+                    text: '즐겨찾기 화면 띄우기',
+                    onTap: () => Nav.push(const FFavorite(isShowBackButton: true), context: context),
+                    theme: RoundButtonTheme.blue,
+                  ),
+                ]),
               ),
             )
           ],

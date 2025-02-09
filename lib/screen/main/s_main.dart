@@ -1,20 +1,24 @@
+// ignore_for_file: avoid_print
+
+import 'package:after_layout/after_layout.dart';
 import 'package:fast_app_base/screen/main/tab/tab_item.dart';
 import 'package:fast_app_base/screen/main/tab/tab_navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import '../../common/common.dart';
 import 'w_menu_drawer.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class SMain extends StatefulWidget {
+  const SMain({super.key});
 
   @override
-  State<MainScreen> createState() => MainScreenState();
+  State<SMain> createState() => SMainState();
 }
 
-class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin {
+class SMainState extends State<SMain> with SingleTickerProviderStateMixin, AfterLayoutMixin<SMain> {
   TabItem _currentTab = TabItem.home;
-  final tabs = [TabItem.home, TabItem.favorite];
+  final tabs = [TabItem.home, TabItem.benefit, TabItem.ttospay, TabItem.stock, TabItem.favorite];
   final List<GlobalKey<NavigatorState>> navigatorKeys = [];
 
   int get _currentIndex => tabs.indexOf(_currentTab);
@@ -27,8 +31,19 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
 
   @override
   void initState() {
+    print('initState');
     super.initState();
     initNavigatorKeys();
+  }
+
+  @override
+  FutureOr<void> afterFirstLayout(BuildContext context) async {
+    print('afterFirstLayout');
+    print('-----------------');
+    print('Future.delayed 실행');
+    print('실제 앱에서는 login, loading 기능 등 구현');
+    await Future.delayed(const Duration(seconds: 3), () => FlutterNativeSplash.remove());
+    print('3초 경과, Future.delayed 완료');
   }
 
   @override
@@ -52,8 +67,7 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
     );
   }
 
-  bool get isRootPage =>
-      _currentTab == TabItem.home && _currentTabNavigationKey.currentState?.canPop() == false;
+  bool get isRootPage => _currentTab == TabItem.home && _currentTabNavigationKey.currentState?.canPop() == false;
 
   IndexedStack get pages => IndexedStack(
       index: _currentIndex,
@@ -123,8 +137,7 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
     });
   }
 
-  BottomNavigationBarItem bottomItem(
-      bool activate, IconData iconData, IconData inActivateIconData, String label) {
+  BottomNavigationBarItem bottomItem(bool activate, IconData iconData, IconData inActivateIconData, String label) {
     return BottomNavigationBarItem(
         icon: Icon(
           key: ValueKey(label),
