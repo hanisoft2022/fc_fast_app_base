@@ -50,7 +50,9 @@ class SMainState extends State<SMain> with SingleTickerProviderStateMixin, After
   Widget build(BuildContext context) {
     return PopScope(
       canPop: isRootPage,
-      onPopInvoked: _handleBackPressed,
+      onPopInvokedWithResult: (bool didPop, Object? result) {
+        _handleBackPressed(didPop);
+      },
       child: Scaffold(
         extendBody: extendBody, //bottomNavigationBar 아래 영역 까지 그림
         drawer: const MenuDrawer(),
