@@ -38,12 +38,14 @@ class SMainState extends State<SMain> with SingleTickerProviderStateMixin, After
 
   @override
   FutureOr<void> afterFirstLayout(BuildContext context) async {
-    print('afterFirstLayout');
-    print('-----------------');
-    print('Future.delayed 실행');
-    print('실제 앱에서는 login, loading 기능 등 구현');
-    await Future.delayed(const Duration(seconds: 3), () => FlutterNativeSplash.remove());
-    print('3초 경과, Future.delayed 완료');
+    // ! splash screen 실험용.
+    // print('afterFirstLayout');
+    // print('-----------------');
+    // print('Future.delayed 실행');
+    // print('실제 앱에서는 login, loading 기능 등 구현');
+    // await Future.delayed(const Duration(seconds: 3), () => FlutterNativeSplash.remove());
+    // print('3초 경과, Future.delayed 완료');
+    FlutterNativeSplash.remove();
   }
 
   @override

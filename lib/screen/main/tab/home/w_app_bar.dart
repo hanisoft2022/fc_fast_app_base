@@ -2,6 +2,7 @@ import 'package:fast_app_base/common/common.dart';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:badges/badges.dart' as badges;
 
 class TtossAppBar extends StatefulWidget {
   const TtossAppBar({super.key});
@@ -11,7 +12,8 @@ class TtossAppBar extends StatefulWidget {
 }
 
 class _TtossAppBarState extends State<TtossAppBar> {
-  final _showRedDot = false;
+  // * custom badge field
+  bool _showRedDot = true;
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +27,40 @@ class _TtossAppBarState extends State<TtossAppBar> {
           const Expanded(child: SizedBox()),
           Image.asset('$basePath/icon/map_point.png', height: 30),
           const Gap(10),
-          Stack(
-            children: [
-              Image.asset('$basePath/icon/notification.png', height: 30),
-              if (!_showRedDot)
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      width: 6,
-                      height: 6,
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.red),
-                    ),
-                  ),
-                )
-            ],
+
+          // *
+          // ! testing
+          // ?
+          // todo
+
+          // ! testing
+          // * custom badge
+          // Stack(
+          //   children: [
+          //     Image.asset('$basePath/icon/notification.png', height: 30),
+          //     if (!_showRedDot)
+          //       Positioned.fill(
+          //         child: Align(
+          //           alignment: Alignment.topRight,
+          //           child: Container(
+          //             width: 6,
+          //             height: 6,
+          //             decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+          //           ),
+          //         ),
+          //       )
+          //   ],
+          // ),
+          // ! testing
+          // * 'badges' package
+          badges.Badge(
+            position: badges.BadgePosition.topEnd(top: 0, end: -4),
+            showBadge: _showRedDot,
+            onTap: () {},
+            badgeStyle: const badges.BadgeStyle(badgeColor: Colors.red, padding: EdgeInsets.all(4)),
+            child: const Icon(Icons.notifications, color: Color.fromARGB(255, 98, 98, 107), size: 30),
           ),
+
           const Gap(10),
         ],
       ),
