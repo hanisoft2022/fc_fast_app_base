@@ -7,7 +7,7 @@ import 'package:fast_app_base/screen/main/tab/ttospay/f_ttospay.dart';
 import 'package:flutter/material.dart';
 
 enum TabItem {
-  home(Icons.home, '홈', FHome()),
+  home(Icons.home, '홈', HomeFragment()),
   benefit(Icons.star, '혜택', FBenefit()),
   ttospay(Icons.payment, '토스페이', FTtospay()),
   stock(Icons.candlestick_chart, '주식', FStock()),
