@@ -11,6 +11,8 @@ class TtossAppBar extends StatefulWidget {
 }
 
 class _TtossAppBarState extends State<TtossAppBar> {
+  final _showRedDot = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,6 +28,17 @@ class _TtossAppBarState extends State<TtossAppBar> {
           Stack(
             children: [
               Image.asset('$basePath/icon/notification.png', height: 30),
+              if (!_showRedDot)
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      width: 6,
+                      height: 6,
+                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.red),
+                    ),
+                  ),
+                )
             ],
           ),
           const Gap(10),
