@@ -19,11 +19,16 @@ class _TtossAppBarState extends State<TtossAppBar> {
       child: Row(
         children: [
           const Gap(10),
-          Image.asset('$basePath/icon/toss.png', height: 30),
-          const Gap(10),
+          Image.asset('$basePath/icon/ttoss.png', height: 30),
+          const Expanded(child: SizedBox()),
           Image.asset('$basePath/icon/map_point.png', height: 30),
           const Gap(10),
-          Image.asset('$basePath/icon/notification.png', height: 30),
+          Stack(
+            children: [
+              Image.asset('$basePath/icon/notification.png', height: 30),
+            ],
+          ),
+          const Gap(10),
         ],
       ),
     );
