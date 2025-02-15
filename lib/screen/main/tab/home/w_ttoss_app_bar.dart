@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:badges/badges.dart' as badges;
 
 class TtossAppBarWidget extends StatefulWidget {
+  static const double appBarHeight = 60;
   const TtossAppBarWidget({super.key});
 
   @override
@@ -18,7 +19,7 @@ class _TtossAppBarWidgetState extends State<TtossAppBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: TtossAppBarWidget.appBarHeight,
       color: context.appColors.appBarBackground,
       child: Row(
         children: [

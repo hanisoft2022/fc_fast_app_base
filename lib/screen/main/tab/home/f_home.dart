@@ -21,35 +21,44 @@ class HomeFragment extends StatelessWidget {
         color: context.appColors.seedColor.getMaterialColorValues[100],
         child: Stack(
           children: [
-            SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                child: Column(
-                  children: [
-                    const Gap(60),
-                    BigButtonWidget(
-                      name: '토스뱅크',
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Dialog(
-                            child: Container(),
-                          ),
-                        );
-                      },
-                    ),
-                    const Gap(4),
-                    RoundedContainerWidget(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('자산', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
-                          const Gap(4),
-                          ...bankAccounts.map((e) => BankAccountWidget(account: e)).toList(),
-                        ],
+            RefreshIndicator(
+              edgeOffset: TtossAppBarWidget.appBarHeight,
+              onRefresh: () async {
+                await Future.delayed(
+                  const Duration(seconds: 1),
+                );
+              },
+              child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  child: Column(
+                    children: [
+                      const Gap(TtossAppBarWidget.appBarHeight),
+                      BigButtonWidget(
+                        name: '토스뱅크',
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => Dialog(
+                              child: Container(),
+                            ),
+                          );
+                        },
                       ),
-                    ),
-                  ],
+                      const Gap(4),
+                      RoundedContainerWidget(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('자산', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+                            const Gap(4),
+                            ...bankAccounts.map((e) => BankAccountWidget(account: e)).toList(),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
