@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FTtospay extends StatelessWidget {
-  const FTtospay({super.key});
+class FTtospayFragment extends StatelessWidget {
+  const FTtospayFragment({super.key});
 
   @override
   Widget build(BuildContext context) {

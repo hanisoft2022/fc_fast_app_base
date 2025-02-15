@@ -1,4 +1,5 @@
 import 'package:fast_app_base/common/common.dart';
+import 'package:fast_app_base/common/router/router.dart';
 import 'package:fast_app_base/common/theme/custom_theme_app.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
 
@@ -39,14 +40,18 @@ class AppState extends State<App> with Nav, WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return CustomThemeApp(
       child: Builder(builder: (context) {
-        return MaterialApp(
-          navigatorKey: App.navigatorKey,
+        return MaterialApp.router(
+          //* go_router 이용하기 위해 아래 navigatorKey 주석처리, 작동 안 할 경우 회귀하기
+          // navigatorKey: App.navigatorKey,
+
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           title: 'Image Finder',
           theme: context.themeType.themeData,
-          home: const SMain(),
+          //* go_router 이용하기 위해 아래 home 주석처리, 작동 안 할 경우 회귀하기
+          // home: const MainScreen(),
+          routerConfig: router,
         );
       }),
     );

@@ -3,6 +3,7 @@ import 'package:fast_app_base/common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:go_router/go_router.dart';
 
 class TtossAppBarWidget extends StatefulWidget {
   static const double appBarHeight = 60;
@@ -52,7 +53,10 @@ class _TtossAppBarWidgetState extends State<TtossAppBarWidget> {
           // ! testing
           // * 'badges' package
           InkWell(
-            onTap: () => setState(() => _showRedDot = !_showRedDot),
+            onTap: () {
+              setState(() => _showRedDot = !_showRedDot);
+              context.push('/notification');
+            },
             child: badges.Badge(
               position: badges.BadgePosition.topEnd(top: 0, end: -4),
               showBadge: _showRedDot,

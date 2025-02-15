@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FBenefit extends StatelessWidget {
-  const FBenefit({super.key});
+class BenefitFragment extends StatelessWidget {
+  const BenefitFragment({super.key});
 
   @override
   Widget build(BuildContext context) {

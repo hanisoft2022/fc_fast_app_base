@@ -9,14 +9,14 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import '../../common/common.dart';
 import 'w_menu_drawer.dart';
 
-class SMain extends StatefulWidget {
-  const SMain({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
-  State<SMain> createState() => SMainState();
+  State<MainScreen> createState() => MainScreenState();
 }
 
-class SMainState extends State<SMain> with SingleTickerProviderStateMixin, AfterLayoutMixin<SMain> {
+class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMixin, AfterLayoutMixin<MainScreen> {
   TabItem _currentTab = TabItem.home;
   final tabs = [TabItem.home, TabItem.benefit, TabItem.ttospay, TabItem.stock, TabItem.favorite];
   final List<GlobalKey<NavigatorState>> navigatorKeys = [];
@@ -29,6 +29,7 @@ class SMainState extends State<SMain> with SingleTickerProviderStateMixin, After
 
   static double get bottomNavigationBarBorderRadius => 30.0;
 
+  static const double bottomNavigationBarHeight = 80.0;
   @override
   void initState() {
     print('initState');

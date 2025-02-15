@@ -10,13 +10,16 @@ class BigButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RoundedContainerWidget(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(name.toString(), style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
-        const Icon(Icons.keyboard_arrow_right_sharp, color: Colors.white)
-      ],
-    ));
+    return InkWell(
+      onTap: onTap,
+      child: RoundedContainerWidget(
+          child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(name.toString(), style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold)),
+          const Icon(Icons.keyboard_arrow_right_sharp, color: Colors.white)
+        ],
+      )),
+    );
   }
 }

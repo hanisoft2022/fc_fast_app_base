@@ -3,6 +3,7 @@ import 'package:fast_app_base/common/widget/w_big_button.dart';
 import 'package:fast_app_base/common/widget/w_rounder_container.dart';
 
 import 'package:fast_app_base/screen/dialog/d_message.dart';
+import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:fast_app_base/screen/main/tab/home/bank_accounts_dummy.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_bank_account.dart';
 import 'package:fast_app_base/screen/main/tab/home/w_ttoss_app_bar.dart';
@@ -30,6 +31,11 @@ class HomeFragment extends StatelessWidget {
               },
               child: SingleChildScrollView(
                 physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.only(
+                    // ! 갑자기 아래 top 아규먼트 있으니까 추가로 여백 생김. stack 위젯 안에 있는거라 필요한데 왜 주석처리해야 오히려 딱 맞지..?
+                    // ! 주석처리해야 정상작동하니까 일단 냅두자.
+                    // top: TtossAppBarWidget.appBarHeight,
+                    bottom: MainScreenState.bottomNavigationBarHeight),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   child: Column(
@@ -40,8 +46,9 @@ class HomeFragment extends StatelessWidget {
                         onTap: () {
                           showDialog(
                             context: context,
-                            builder: (context) => Dialog(
-                              child: Container(),
+                            builder: (context) => const Dialog(
+                              // ! 10강이나 9강 확인. 10강에서는 탭하니까 갑자기 이쁜 다이얼로그가 뜨네;;
+                              child: Text('토스뱅크 누름'),
                             ),
                           );
                         },

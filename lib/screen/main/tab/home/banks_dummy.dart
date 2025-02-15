@@ -1,4 +1,4 @@
-import 'package:fast_app_base/screen/main/tab/home/vo/m_bank.dart';
+import 'package:fast_app_base/screen/main/tab/home/vo/vo_bank.dart';
 
 import '../../../../common/common.dart';
 
