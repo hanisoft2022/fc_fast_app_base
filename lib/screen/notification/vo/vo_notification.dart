@@ -3,14 +3,14 @@ import 'package:fast_app_base/screen/notification/vo/notification_type.dart';
 
 class TTossNotification {
   final NotificationType type;
-  final String description;
   final DateTime time;
+  final String description;
   bool isRead;
 
   TTossNotification({
     required this.type,
-    required this.description,
     required this.time,
+    required this.description,
     this.isRead = false,
   });
 }
