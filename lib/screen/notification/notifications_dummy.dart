@@ -16,6 +16,7 @@ final notificationDummies = <TTossNotification>[
     type: NotificationType.walk,
     description: '1,000 걸음 이상 걸었다면 포인트 받으세요.',
     time: DateTime.now().subtract(const Duration(hours: 1)),
+    isRead: true,
   ),
   TTossNotification(
     type: NotificationType.moneyTip,
