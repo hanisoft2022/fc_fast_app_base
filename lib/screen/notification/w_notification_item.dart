@@ -14,6 +14,20 @@ class NotificationItemWidget extends StatefulWidget {
 class _NotificationItemWidgetState extends State<NotificationItemWidget> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      color: widget.notification.isRead ? Colors.grey : Colors.white,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Image.asset(widget.notification.type.iconPath),
+              Text(widget.notification.type.name),
+              Text('${widget.notification.time.toString()}분전'),
+            ],
+          ),
+          Text(widget.notification.description),
+        ],
+      ),
+    );
   }
 }

@@ -24,7 +24,7 @@ final notificationDummies = <TTossNotification>[
   ),
   TTossNotification(
     type: NotificationType.walk,
-    description: '오늘 1,000 걸음을 넘겼어요. 포인틀르 받아보세요.',
+    description: '오늘 1,000 걸음을 넘겼어요. 포인트를 받아보세요.',
     time: DateTime.now().subtract(const Duration(hours: 11)),
   ),
   TTossNotification(
